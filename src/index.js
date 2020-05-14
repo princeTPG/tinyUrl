@@ -5,6 +5,9 @@ import mongooseConnect from './services/mongoose';
 
 import { PORT } from './config';
 
+import { errorHandler, successHandler } from './helpers/responseHandlers';
+import urlRouter from './api/url/urlRoutes';
+
 const app = express();
 mongooseConnect();
 
@@ -14,11 +17,13 @@ app.use(cors());
 
 app.get('/status', async (req, res) => {
   try {
-    res.status(200).json({ message: "Success" });
+    successHandler(res, 'Status OK')
   } catch (error) {
-    res.status(500).json(new Error(error));
+    errorHandler(res, error);
   }
 });
+
+app.use('/', urlRouter);
 
 app.listen(PORT, () => {
   console.log(`Node Server is up at http://localhost:${PORT} port`);
