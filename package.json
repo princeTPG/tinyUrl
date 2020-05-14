@@ -1,0 +1,23 @@
+{
+  "name": "tinyUrl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Prince Verma",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./node_modules/.bin/babel-node src/index.js",
+    "dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/babel-node src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.4"
+  }
+}
