@@ -7,6 +7,7 @@ import { PORT } from './config';
 
 import { errorHandler, successHandler } from './helpers/responseHandlers';
 import urlRouter from './api/url/urlRoutes';
+import analyticsRouter from './api/analytics/analyticsRoutes';
 
 const app = express();
 mongooseConnect();
@@ -23,6 +24,7 @@ app.get('/status', async (req, res) => {
   }
 });
 
+app.use('/analytics', analyticsRouter);
 app.use('/', urlRouter);
 
 app.listen(PORT, () => {
