@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "http-status": "^1.4.2",
     "lodash": "^4.17.15",
+    "memcached": "^2.2.2",
     "mongoose": "^5.9.14",
     "shortid": "^2.2.15"
   },

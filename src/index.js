@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+
 import mongooseConnect from './services/mongoose';
 
 import { PORT } from './config';
