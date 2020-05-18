@@ -4,7 +4,6 @@ import { MEMCACHE_PORT, DEFAULT_CACHE_LIFETIME } from '../config';
 const serverLocation = `localhost:${MEMCACHE_PORT}`;
 
 const memcached = new Memcached(serverLocation, { retries: 10, retry: 10000, remove: true });
-memcached.on('failure', function( details ){ sys.error( "Server " + details.server + "went down due to: " + details.messages.join( '' ) ) });
 
 export const getValue = (key) => {
   return new Promise((resolve, reject) => {

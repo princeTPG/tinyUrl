@@ -6,7 +6,7 @@
 - Install `npm` or `yarn`
 - Start MongoDB
 - install and start `memcached` server on port `11211` (default)
-- Run `yarn dev` or `npm run dev` to run normal server
+- Run `yarn dev` / `yarn start` to run normal server, or Run `yarn server` to run both `memcached` and `node` servers.
 - Check `http://localhost:3000/status` to see if server works
 
 ## NOTE
