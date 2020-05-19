@@ -13,6 +13,7 @@ import analyticsRouter from './api/analytics/analyticsRoutes';
 const app = express();
 mongooseConnect();
 
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -24,7 +25,6 @@ app.get('/status', async (req, res) => {
     errorHandler(res, error);
   }
 });
-
 app.use('/analytics', analyticsRouter);
 app.use('/', urlRouter);
 
