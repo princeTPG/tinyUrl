@@ -92,7 +92,7 @@ export const add = async (req, res) => {
     }
 
     const currentDate = new Date().getTime();
-    const expireAt = new Date(currentDate + expireIn * 1000);
+    const expireAt = new Date(currentDate + parseInt(expireIn) * 1000);
 
     await urlModel.create({ link, uid, expireAt });
     const response = { shortLink: `${DOMAIN}/${uid}`, message: '' };
