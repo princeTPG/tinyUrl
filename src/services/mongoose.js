@@ -4,11 +4,9 @@ import { MONGO_URI, ENV } from '../config';
 mongoose.Promise = Promise;
 
 mongoose.connection.on('connected', () => {
-  // eslint-disable-next-line no-console
   console.log('MongoDB is connected');
 });
 mongoose.connection.on('error', (err) => {
-  // eslint-disable-next-line no-console
   console.log(`Could not connect to MongoDB because of ${err}`);
   process.exit(1);
 });
